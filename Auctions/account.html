@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>drone</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="account css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="stylepre.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+
+<body>
+  <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+
+    </div>
+<div class="wrapper">
+      <nav class="flex-nav">
+        <ul>
+          <li>
+            <a href ="2index.html">ГОЛОВНА</a>
+          </li>
+          <li>
+            <a href ="2auction.html">АУКЦІОНИ</a>
+          </li>
+          <li>
+            <a href ="account.html">АКАУНТ</a>
+          </li>
+         <!--  <li class = "social">
+          <a href="https://www.instagram.com/danchik_k_/"target="_blank"><i class="fa fa-instagram "></i></a> 
+        </li>
+        <li class = "social">
+          <a href="https://www.facebook.com/kukalodaniil"target="_blank"><i class="fa fa-facebook"></i></a> 
+        </li>
+        <li class = "social">
+          <a href="https://t.me/kylikni"target="_blank"><i class="fa fa-telegram "></i></a> 
+        </li> -->
+          <!-- <div class="dropdown-content">
+            <li><a href="droneeng.html">English</a></li>
+            <li><a href="droneua.html">Українська</a></li>
+            <li><a href="dronedg.html">Deutsch</a></li>
+            </div>
+          </div> -->
+        </ul>
+      </nav>
+   </div>
+    <div class="container">
+        <div class="profile">
+            <h1>User Profile</h1>
+            <form id="profileForm">
+                <div style="display: flex; align-items: flex-start;">
+                    <div id="imagePreviewContainer" style="display: none;">
+                        <h3></h3>
+                        <img id="imagePreview" src="#" alt="Uploaded Image" style="max-width: 300px; max-height: 300px;">
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <label for="image"></label>
+                        <input type="file" id="image" accept="image/*" onchange="previewImage(event)" style="display: none;">
+                        <button type="button" onclick="document.getElementById('image').click()">Выбрать файл</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" value="John Doe" disabled>
+                    <button type="button" onclick="enableEdit('name')">Edit</button>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="john@example.com" disabled>
+                    <button type="button" onclick="enableEdit('email')">Edit</button>
+                </div>
+                <div>
+                    <label for="telegram">Telegram:</label>
+                    <input type="text" id="telegram" value="@johndoe" disabled>
+                    <button type="button" onclick="enableEdit('telegram')">Edit</button>
+                </div>
+                <div>
+                    <label for="telefon">Telefon numb:</label>
+                    <input type="text" id="telefon" value="+380667837754" disabled>
+                    <button type="button" onclick="enableEdit('telefon')">Edit</button>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <h2>My Bids</h2>
+                <ul id="myBidsList">
+                    <!-- Placeholder for My Bids -->
+                    <li>You have not placed any bids yet.</li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <h2>My Lots</h2>
+                <ul id="myLotsList">
+                    <!-- Placeholder for My Lots -->
+                    <li>You have not listed any items yet.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<script src="accountjs.js"></script>
+<script src="script.js"></script>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="js/main.js"></script>
+  </html>
