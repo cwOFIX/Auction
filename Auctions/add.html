@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>drone</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="account css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="stylepre.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+
+<body>
+  <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+
+    </div>
+<div class="wrapper">
+      <nav class="flex-nav">
+        <ul>
+          <li>
+            <a href ="2index.html">ГОЛОВНА</a>
+          </li>
+          <li>
+            <a href ="2auction.html">АУКЦІОНИ</a>
+          </li>
+          <li>
+            <a href ="account.html">АКАУНТ</a>
+          </li>
+         <!--  <li class = "social">
+          <a href="https://www.instagram.com/danchik_k_/"target="_blank"><i class="fa fa-instagram "></i></a> 
+        </li>
+        <li class = "social">
+          <a href="https://www.facebook.com/kukalodaniil"target="_blank"><i class="fa fa-facebook"></i></a> 
+        </li>
+        <li class = "social">
+          <a href="https://t.me/kylikni"target="_blank"><i class="fa fa-telegram "></i></a> 
+        </li> -->
+          <!-- <div class="dropdown-content">
+            <li><a href="droneeng.html">English</a></li>
+            <li><a href="droneua.html">Українська</a></li>
+            <li><a href="dronedg.html">Deutsch</a></li>
+            </div>
+          </div> -->
+        </ul>
+      </nav>
+   </div>
+
+<div class="container">
+        <h1>Add New Auction</h1>
+        <form id="auctionForm">
+            <div class="form-group">
+                <label for="itemName">Item Name:</label>
+                <input type="text" class="form-control" id="itemName" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="startingPrice">Starting Price:</label>
+                <input type="number" class="form-control" id="startingPrice" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Auction Duration (in minutes):</label>
+                <input type="number" class="form-control" id="duration" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#auctionForm').submit(function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Gather form data
+                var itemName = $('#itemName').val();
+                var description = $('#description').val();
+                var startingPrice = $('#startingPrice').val();
+                var duration = $('#duration').val();
+
+                // Perform validation (if needed)
+
+                // Example AJAX call to send data to server for processing
+                $.ajax({
+                    type: 'POST',
+                    url: 'process_auction.php', // URL to your server-side script for processing auction data
+                    data: {
+                        itemName: itemName,
+                        description: description,
+                        startingPrice: startingPrice,
+                        duration: duration
+                    },
+                    success: function(response) {
+                        // Handle success response
+                        console.log(response);
+                        alert('Auction added successfully!');
+                        // Redirect to the main page or any other relevant page
+                        window.location.href = 'auction.html';
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error response
+                        console.error(xhr.responseText);
+                        alert('Error adding auction. Please try again later.');
+                    }
+                });
+            });
+        });
+    </script>
+<script src="script.js"></script>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="js/main.js"></script>
+  </html>
