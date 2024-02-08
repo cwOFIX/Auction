@@ -55,70 +55,63 @@
         </ul>
       </nav>
    </div>
-
-<div class="container">
-        <h1>Add New Auction</h1>
-        <form id="auctionForm">
-            <div class="form-group">
-                <label for="itemName">Item Name:</label>
-                <input type="text" class="form-control" id="itemName" required>
+    <div class="container">
+        <div class="profile">
+            <h1>User Profile</h1>
+            <form id="profileForm">
+                <div style="display: flex; align-items: flex-start;">
+                    <div id="imagePreviewContainer" style="display: none;">
+                        <h3></h3>
+                        <img id="imagePreview" src="#" alt="Uploaded Image" style="max-width: 300px; max-height: 300px;">
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <label for="image"></label>
+                        <input type="file" id="image" accept="image/*" onchange="previewImage(event)" style="display: none;">
+                        <button type="button" onclick="document.getElementById('image').click()">Выбрать файл</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" value="John Doe" disabled>
+                    <button type="button" onclick="enableEdit('name')">Edit</button>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="john@example.com" disabled>
+                    <button type="button" onclick="enableEdit('email')">Edit</button>
+                </div>
+                <div>
+                    <label for="telegram">Telegram:</label>
+                    <input type="text" id="telegram" value="@johndoe" disabled>
+                    <button type="button" onclick="enableEdit('telegram')">Edit</button>
+                </div>
+                <div>
+                    <label for="telefon">Telefon numb:</label>
+                    <input type="text" id="telefon" value="+380667837754" disabled>
+                    <button type="button" onclick="enableEdit('telefon')">Edit</button>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <h2>My Bids</h2>
+                <ul id="myBidsList">
+                    <!-- Placeholder for My Bids -->
+                    <li>You have not placed any bids yet.</li>
+                </ul>
             </div>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" rows="3"></textarea>
+            <div class="sidebar-item">
+                <h2>My Lots</h2>
+                <ul id="myLotsList">
+                    <!-- Placeholder for My Lots -->
+                    <li>You have not listed any items yet.</li>
+                </ul>
             </div>
-            <div class="form-group">
-                <label for="startingPrice">Starting Price:</label>
-                <input type="number" class="form-control" id="startingPrice" required>
-            </div>
-            <div class="form-group">
-                <label for="duration">Auction Duration (in minutes):</label>
-                <input type="number" class="form-control" id="duration" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#auctionForm').submit(function(event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // Gather form data
-                var itemName = $('#itemName').val();
-                var description = $('#description').val();
-                var startingPrice = $('#startingPrice').val();
-                var duration = $('#duration').val();
-
-                // Perform validation (if needed)
-
-                // Example AJAX call to send data to server for processing
-                $.ajax({
-                    type: 'POST',
-                    url: 'process_auction.php', // URL to your server-side script for processing auction data
-                    data: {
-                        itemName: itemName,
-                        description: description,
-                        startingPrice: startingPrice,
-                        duration: duration
-                    },
-                    success: function(response) {
-                        // Handle success response
-                        console.log(response);
-                        alert('Auction added successfully!');
-                        // Redirect to the main page or any other relevant page
-                        window.location.href = 'auction.html';
-                    },
-                    error: function(xhr, status, error) {
-                        // Handle error response
-                        console.error(xhr.responseText);
-                        alert('Error adding auction. Please try again later.');
-                    }
-                });
-            });
-        });
-    </script>
+<script src="accountjs.js"></script>
 <script src="script.js"></script>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
