@@ -3,11 +3,11 @@
 $servername = "95.132.80.9";
 $username = "remote_user";
 $password = "26122003Fr!";
-$dbname = "Mysql";
+$dbname = "new_schema1";
 
 try {
     // Создание подключения к базе данных
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("new_schema1:host=$servername;dbname=$dbname", $username, $password);
     
     // Установка режима обработки ошибок для выброса исключений
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -21,7 +21,7 @@ try {
         $password = $_POST['password']; // Пароль
         
         // SQL запрос для вставки данных в таблицу
-        $sql = "INSERT INTO ваша_таблица (name, email, password) VALUES ('$name', '$email', '$password')";
+        $sql = "INSERT INTO Users (name, email, password) VALUES ('$name', '$email', '$password')";
         
         // Исполнение SQL запроса
         $conn->exec($sql);
