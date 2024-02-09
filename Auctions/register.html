@@ -61,25 +61,22 @@
    </div>
    
 
-<form>
-  <h1>Register</h1>
-  <div class="inset">
-    <p>
-    <label for="user">NAME, LASTNAME</label>
-    <input type="text" name="user" id="user">
-  </p>
-  <p>
-    <label for="email">EMAIL ADDRESS</label>
-    <input type="text" name="email" id="email">
-  </p>
-  <p>
-    <label for="password">PASSWORD</label>
-    <input type="password" name="password" id="password">
-  </p>
+<form action="handler.php" method="post">
+  <div>
+    <label for="user">Name, Lastname:</label>
+    <input type="text" name="name" id="user" required>
   </div>
-  <p class="p-container">
-    <input type="submit" name="go" id="go" value="Register">
-  </p>
+  <div>
+    <label for="email">Email Address:</label>
+    <input type="email" name="email" id="email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+  </div>
+  <div>
+    <input type="submit" name="register" value="Register">
+  </div>
 </form>
 </body>
 <script src="script.js"></script>
